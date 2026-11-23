@@ -67,7 +67,6 @@
   }
   if(page==='chronicle'){
     body += '<h1>校園工程大事記</h1><p>大工程與校內小工程放在同一條時間軸，新的在上面。</p>'+
-      '<p class="sample">標示「待確認」的小工程，日期與狀態是預覽用的暫填資料，上線前須由總務處確認或刪除。</p>'+
       '<div class="filters" role="group" aria-label="篩選">'+[['all','全部'],['nw','北棟、西棟'],['av','視聽文化館'],['small','小工程']].map(function(f,i){return '<button type="button" data-f="'+f[0]+'" aria-pressed="'+(i===0)+'">'+f[1]+'</button>'}).join('')+'</div><div id="list"></div>';
   }
   if(page==='docs'){
