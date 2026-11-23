@@ -16,7 +16,7 @@ window.SITE = {
   sheets: [
     {
       id: 'nw', no: 'A-02', page: 'nw.html',
-      name: '老舊校舍拆除新建工程（北棟、西棟）',
+      name: '新竹市內湖國小校園整體規劃暨老舊校舍（北棟、西棟）拆除重建工程',
       short: '北棟、西棟校舍改建',
       photo: 'images/site-01.jpg', photoAlt: '內湖國小校園空拍',
       owner: '新竹市政府教育處',

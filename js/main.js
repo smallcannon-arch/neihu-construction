@@ -79,7 +79,13 @@
 
   if(page==='chronicle'){
     var all = S.chronicle.slice().sort(function(a,b){return b.sort-a.sort});
-    var draw = function(f){document.getElementById('list').innerHTML = rows(all.filter(function(e){return f==='all'||e.kind===f}))};
+    var ay = function(e){var y=Math.floor(e.sort/10000), mo=Math.floor(e.sort/100)%100; return mo>=8?y:y-1};
+    var draw = function(f){
+      var list = all.filter(function(e){return f==='all'||e.kind===f}), groups = [], html = '';
+      list.forEach(function(e){var k=ay(e), g=groups[groups.length-1]; if(!g||g.k!==k){g={k:k,items:[]};groups.push(g)} g.items.push(e)});
+      groups.forEach(function(g,i){html += '<h2'+(i===0?' style="margin-top:1.4rem"':'')+'>'+g.k+'學年度</h2>'+rows(g.items)});
+      document.getElementById('list').innerHTML = html;
+    };
     draw('all');
     document.querySelectorAll('.filters button').forEach(function(b){
       b.addEventListener('click',function(){
