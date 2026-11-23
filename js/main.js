@@ -41,14 +41,14 @@
         var ph = sh.photo ? '<img src="'+sh.photo+'" alt="'+esc(sh.photoAlt)+'">' : '施工照片待補';
         return '<section class="sheet"><div class="ph">'+ph+'</div><h2>'+esc(sh.short)+'</h2>'+stages(sh)+
           '<table class="titleblock"><tbody><tr><th>目前階段</th><td>'+esc(sh.stageNow)+'</td></tr><tr><th>完工</th><td>'+esc(sh.finish)+'</td></tr><tr><th>圖號</th><td class="no">'+sh.no+'</td></tr></tbody></table>'+
-          '<a class="more" href="'+sh.page+'">看完整圖說：'+esc(sh.short)+'</a></section>'}).join('')+'</div>'+
-      '<h2>最近的事</h2>'+rows(S.chronicle.slice().sort(function(a,b){return b.sort-a.sort}).filter(function(e){return e.s!=='tbd'}).slice(0,5))+
-      '<p style="margin-top:1rem"><a href="chronicle.html">看全部大事記（含校內小工程）</a></p>';
+          '<a class="more" href="'+sh.page+'">詳見：'+esc(sh.short)+'</a></section>'}).join('')+'</div>'+
+      '<h2>近期事項</h2>'+rows(S.chronicle.slice().sort(function(a,b){return b.sort-a.sort}).filter(function(e){return e.s!=='tbd'}).slice(0,5))+
+      '<p style="margin-top:1rem"><a href="chronicle.html">全部大事記（含校內小工程）</a></p>';
   }
   if(page==='nw' || page==='av'){
     var sh = sheetById(page);
     body += '<h1>'+esc(sh.name)+'</h1>'+titleblock(sh)+'<h2>進度</h2>'+stages(sh)+
-      '<h2>為什麼要做</h2>'+sh.why.map(function(w){return '<h3>'+esc(w.t)+'</h3><p>'+esc(w.d)+'</p>'}).join('');
+      '<h2>工程緣起</h2>'+sh.why.map(function(w){return '<h3>'+esc(w.t)+'</h3><p>'+esc(w.d)+'</p>'}).join('');
     if(sh.buildings){
       body += '<h2>新校舍</h2>'+sh.buildings.map(function(b){
         return '<h3>'+esc(b.name)+'　<span style="font-weight:400;font-size:.95rem">'+esc(b.sub)+'｜'+esc(b.area)+'</span></h3><table class="floor"><tbody>'+
@@ -56,12 +56,12 @@
       '<h2>施工期間（預定）</h2><ul>'+sh.during.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul><p>'+esc(sh.duringNote)+'</p>';
     } else {
       body += '<h2>補強與修繕內容</h2><table class="floor"><tbody>'+sh.scope.map(function(x){return '<tr><td style="width:6em">'+esc(x[0])+'</td><td>'+esc(x[1])+'</td></tr>'}).join('')+'</tbody></table>'+
-        '<h2>施工期間</h2><p>115 年 11 月 2 日開工，預定 116 年 1 月 31 日完工。施工期間校園不開放，施工範圍以圍籬隔開。有噪音或影響上課的作業，施工前會先與學校協調時間。通行方式以學校公告為準。</p>';
+        '<h2>施工期間</h2><p>115 年 11 月 2 日開工，預定 116 年 1 月 31 日完工。施工期間校園不開放，施工範圍以圍籬隔開。有噪音或影響上課之作業，施工前將與學校協調時間。通行方式以學校公告為準。</p>';
     }
     if(sh.gallery){
       body += '<h2>施工照片</h2><div class="gal">'+sh.gallery.map(function(g){return '<figure><img src="'+g.file+'" alt="'+esc(g.cap)+'" loading="lazy"><figcaption>'+esc(g.cap)+'</figcaption></figure>'}).join('')+'</div>';
     }
-    body += '<h2>這件工程的大事記</h2>'+rows(S.chronicle.filter(function(e){return e.kind===page}).sort(function(a,b){return b.sort-a.sort}), true);
+    body += '<h2>工程大事記</h2>'+rows(S.chronicle.filter(function(e){return e.kind===page}).sort(function(a,b){return b.sort-a.sort}), true);
   }
   if(page==='chronicle'){
     body += '<h1>校園工程大事記</h1>'+
