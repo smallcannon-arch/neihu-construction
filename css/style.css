@@ -17,9 +17,11 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.35;margin:0}
 h1{font-size:clamp(1.9rem,4.6vw,2.9rem)}
 h2{font-size:1.5rem;margin:2.6rem 0 .8rem}
 h3{font-size:1.15rem;margin:1.4rem 0 .3rem}
-p{margin:.5rem 0;max-width:38em}
+p{margin:.5rem 0;max-width:38em;text-wrap:pretty}
+h1,h2,h3,summary,.rows .t,.stages .st,.index li a span:last-child,.notice h2,.two .sheet h2{text-wrap:balance}
+.titleblock td,.rows .d,.gal figcaption,.floor td{text-wrap:pretty}
 
-.layout{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+.layout{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
 .index{position:sticky;top:0;align-self:start;height:100vh;padding:28px 22px;border-right:1px solid var(--rule);background:var(--paper)}
 .index .school{font-family:var(--serif);font-weight:700;font-size:1.05rem;line-height:1.5;margin-bottom:1.4rem}
 .index ol{list-style:none;margin:0;padding:0}
