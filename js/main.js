@@ -18,7 +18,7 @@
 
   function titleblock(sh){
     return '<table class="titleblock"><tbody>'+
-      '<tr><th>工程名稱</th><td>'+esc(sh.name)+'</td><th>圖號</th><td class="no">'+sh.no+'</td></tr>'+
+      '<tr><th>工程名稱</th><td>'+esc(sh.name)+'</td><th>頁次</th><td class="no">'+sh.no+'</td></tr>'+
       '<tr><th>目前階段</th><td>'+esc(sh.stageNow)+'</td><th>更新</th><td>'+esc(S.updated)+'</td></tr>'+
       '<tr><th>辦理單位</th><td>'+esc(sh.owner)+'</td><th>完工</th><td>'+esc(sh.finish)+'</td></tr>'+
       '<tr><th>設計單位</th><td>'+esc(sh.designer)+'</td><th>施工單位</th><td>'+esc(sh.contractor)+'</td></tr>'+
@@ -40,7 +40,7 @@
       '<div class="two">'+S.sheets.map(function(sh){
         var ph = sh.photo ? '<img src="'+sh.photo+'" alt="'+esc(sh.photoAlt)+'">' : '施工照片待補';
         return '<section class="sheet"><div class="ph">'+ph+'</div><h2>'+esc(sh.short)+'</h2>'+stages(sh)+
-          '<table class="titleblock"><tbody><tr><th>目前階段</th><td>'+esc(sh.stageNow)+'</td></tr><tr><th>完工</th><td>'+esc(sh.finish)+'</td></tr><tr><th>圖號</th><td class="no">'+sh.no+'</td></tr></tbody></table>'+
+          '<table class="titleblock"><tbody><tr><th>目前階段</th><td>'+esc(sh.stageNow)+'</td></tr><tr><th>完工</th><td>'+esc(sh.finish)+'</td></tr><tr><th>頁次</th><td class="no">'+sh.no+'</td></tr></tbody></table>'+
           '<a class="more" href="'+sh.page+'">詳見：'+esc(sh.short)+'</a></section>'}).join('')+'</div>'+
       '<h2>近期事項</h2>'+rows(S.chronicle.slice().sort(function(a,b){return b.sort-a.sort}).filter(function(e){return e.s!=='tbd'}).slice(0,5))+
       '<p style="margin-top:1rem"><a href="chronicle.html">全部大事記（含校內小工程）</a></p>';
@@ -72,7 +72,7 @@
       '<h2>聯絡</h2><p>'+esc(S.contact.unit)+'<br>電話：'+esc(S.contact.tel)+'<br>信箱：<a href="mailto:'+S.contact.email+'">'+esc(S.contact.email)+'</a></p>';
   }
 
-  var nav = '<nav class="index" aria-label="圖號目錄"><div class="school">'+esc(S.school)+'<br>工程專區</div><ol>'+
+  var nav = '<nav class="index" aria-label="頁次目錄"><div class="school">'+esc(S.school)+'<br>工程專區</div><ol>'+
     NAV.map(function(n){return '<li><a href="'+n[1]+'"'+(n[1]===cur?' aria-current="page"':'')+'><span class="no">'+n[0]+'</span><span>'+n[2]+'</span></a></li>'}).join('')+'</ol></nav>';
   var foot = '<footer>'+esc(S.school)+' 總務處｜電話 '+esc(S.contact.tel)+'｜最後更新 '+esc(S.updated)+'</footer>';
   document.getElementById('app').innerHTML = nav+'<main><div class="sheet">'+body+'</div>'+foot+'</main>';
