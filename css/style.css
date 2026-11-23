@@ -74,7 +74,8 @@ main{padding:36px clamp(16px,4vw,56px) 64px;max-width:1180px;width:100%;margin:0
 .rows .date{font-family:var(--serif);color:var(--ink2)}
 .rows .t{font-weight:700;line-height:1.55}
 .rows .d{color:var(--ink2);font-size:.95rem;line-height:1.7;margin:.15rem 0 0}
-.rows .k{font-size:.82rem;color:var(--ink2);margin-right:.5em}
+.rows .k{font-size:.85rem;font-weight:500;color:var(--ink2)}
+.rows .k::after{content:"｜";margin:0 .15em}
 
 .filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
 .filters button{font:inherit;font-size:.92rem;padding:.3rem .9rem;border:1px solid var(--ink);background:var(--sheet);color:var(--ink);cursor:pointer}

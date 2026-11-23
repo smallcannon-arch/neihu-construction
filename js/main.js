@@ -36,7 +36,6 @@
   var body = '';
   if(page==='home'){
     body += '<h1>內湖國小 工程專區</h1>'+
-      '<p>校園目前有兩件大工程：視聽文化館正在施工，北棟、西棟改建正在完成細部設計。這裡說明各自做到哪裡，以及對上學有什麼影響。</p>'+
       '<div class="notice" role="note"><h2>'+esc(S.notice.title)+'</h2><p>'+esc(S.notice.text)+'</p></div>'+
       '<div class="two">'+S.sheets.map(function(sh){
         var ph = sh.photo ? '<img src="'+sh.photo+'" alt="'+esc(sh.photoAlt)+'">' : '施工照片待補';
@@ -65,7 +64,7 @@
     body += '<h2>這件工程的大事記</h2>'+rows(S.chronicle.filter(function(e){return e.kind===page}).sort(function(a,b){return b.sort-a.sort}), true);
   }
   if(page==='chronicle'){
-    body += '<h1>校園工程大事記</h1><p>大工程與校內小工程放在同一條時間軸，新的在上面。</p>'+
+    body += '<h1>校園工程大事記</h1>'+
       '<div class="filters" role="group" aria-label="篩選">'+[['all','全部'],['nw','北棟、西棟'],['av','視聽文化館'],['small','小工程']].map(function(f,i){return '<button type="button" data-f="'+f[0]+'" aria-pressed="'+(i===0)+'">'+f[1]+'</button>'}).join('')+'</div><div id="list"></div>';
   }
   if(page==='faq'){
