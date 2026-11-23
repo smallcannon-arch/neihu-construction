@@ -65,7 +65,7 @@ window.SITE = {
       short: '視聽文化館耐震補強',
       photo: 'images/av-04.jpg', photoAlt: '視聽文化館施工圍籬完成後的草坪側全景',
       owner: '新竹市政府教育處（補助）、內湖國小（辦理）',
-      designer: '王東榮工程顧問（設計及監造）',
+      designer: '王東榮工程顧問有限公司（設計及監造）',
       contractor: '青馬營造股份有限公司',
       stageNow: '施工中（115年11月2日開工）',
       finish: '預定 116 年 1 月 31 日（實際依施工進度）',
