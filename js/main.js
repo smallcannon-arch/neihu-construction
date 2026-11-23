@@ -10,10 +10,9 @@
     ['A-02','nw.html','北棟、西棟改建'],
     ['A-03','av.html','視聽文化館耐震補強'],
     ['A-04','chronicle.html','校園工程大事記'],
-    ['A-05','docs.html','公告文件'],
-    ['A-06','faq.html','問答與聯絡']
+    ['A-05','faq.html','問答與聯絡']
   ];
-  var cur = {home:'index.html',nw:'nw.html',av:'av.html',chronicle:'chronicle.html',docs:'docs.html',faq:'faq.html'}[page];
+  var cur = {home:'index.html',nw:'nw.html',av:'av.html',chronicle:'chronicle.html',faq:'faq.html'}[page];
 
   function sheetById(id){return S.sheets.filter(function(x){return x.id===id})[0]}
 
@@ -68,10 +67,6 @@
   if(page==='chronicle'){
     body += '<h1>校園工程大事記</h1><p>大工程與校內小工程放在同一條時間軸，新的在上面。</p>'+
       '<div class="filters" role="group" aria-label="篩選">'+[['all','全部'],['nw','北棟、西棟'],['av','視聽文化館'],['small','小工程']].map(function(f,i){return '<button type="button" data-f="'+f[0]+'" aria-pressed="'+(i===0)+'">'+f[1]+'</button>'}).join('')+'</div><div id="list"></div>';
-  }
-  if(page==='docs'){
-    body += '<h1>公告文件</h1><p>會議紀錄與施工公告。目前暫不開放下載，需要請洽總務處。</p><ul class="rows">'+
-      S.docs.map(function(d){return '<li><span class="date">'+esc(d.date)+'</span><div class="t"><span class="k">'+esc(d.cat)+'</span>'+esc(d.name)+'</div><span class="stamp tbd" style="visibility:hidden">—</span></li>'}).join('')+'</ul>';
   }
   if(page==='faq'){
     body += '<h1>問答與聯絡</h1><div style="margin-top:1.2rem">'+S.faq.map(function(f){return '<details><summary>'+esc(f.q)+'</summary><p>'+esc(f.a)+'</p></details>'}).join('')+'</div>'+
