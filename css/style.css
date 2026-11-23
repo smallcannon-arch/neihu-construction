@@ -28,7 +28,7 @@ p{margin:.5rem 0;max-width:38em}
 .index li a[aria-current=page]{font-weight:700}
 .index li a[aria-current=page] .no{color:var(--brick)}
 
-main{padding:36px clamp(16px,4vw,56px) 64px;max-width:1040px}
+main{padding:36px clamp(16px,4vw,56px) 64px;max-width:1180px;width:100%;margin:0 auto}
 .sheet{background:var(--sheet);border:1px solid var(--ink);padding:clamp(18px,3vw,36px);position:relative}
 .sheet::after{content:"";position:absolute;inset:6px;border:1px solid var(--rule);pointer-events:none}
 .sheet>*{position:relative;z-index:1}
